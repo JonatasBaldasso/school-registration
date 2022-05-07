@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:6603/school-registration
+    username: root
+    password: jsppassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL8Dialect
+  jpa:
+    show-sql: true
