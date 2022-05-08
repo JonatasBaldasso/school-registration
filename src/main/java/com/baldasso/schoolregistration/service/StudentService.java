@@ -30,7 +30,7 @@ public class StudentService {
     public Student findById(Long studentId) {
         Optional<Student> maybeStudent = studentRepository.findById(studentId);
         if(maybeStudent.isEmpty()) {
-            log.warn("Student not found for studentId = " + studentId);
+            log.error("Error: maybeStudent Student not found - studentId = " + studentId);
             throw new StudentNotFound("Student not found");
         }
         return maybeStudent.get();
@@ -67,24 +67,28 @@ public class StudentService {
 
     private void assertRegisterStudentsData(Student student, Course course) {
         if (student.getCourses().size() >= 5) {
+            log.error("Error assertRegisterStudentsData studentFull - studentId:" + student.getId());
             throw new StudentCoursesFullError();
         }
 
         if (course.getStudents().size() >= 50) {
+            log.error("Error assertRegisterStudentsData CourseFull - courseId:" + course.getId());
             throw new CourseFullError();
         }
 
         if(student.getCourses().contains(course)) {
+            log.error("Error assertRegisterStudentsData StudentAlreadyRegistered - studentId:" + student.getId());
             throw new StudentAlreadyRegistered();
         }
     }
 
-    public Student updateStudent(Long studentId, StudentDTO studentDTO) {
+    public void updateStudent(Long studentId, StudentDTO studentDTO) {
         Student student = findById(studentId);
-        if(!studentDTO.getName().isEmpty()) {
+        if(studentDTO.getName() != null && !studentDTO.getName().isEmpty()) {
             student.setName(studentDTO.getName());
+            studentRepository.save(student);
+        } else {
+            log.warn("Warn updateStudent no field to update - studentId:" + studentId);
         }
-        return studentRepository.save(student);
     }
-
 }
