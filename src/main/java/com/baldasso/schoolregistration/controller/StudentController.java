@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/student")
@@ -37,9 +35,9 @@ public class StudentController {
     }
 
     @GetMapping("/no-course")
-    public List<Student> findStudentsWithNoCourse () {
+    public Collection<Student> findStudentsWithNoCourse () {
         log.info("Call findStudentsWithNoCourse");
-        List<Student> students = studentService.findAllStudentsWithNoCourse();
+        Collection<Student> students = studentService.findAllStudentsWithNoCourse();
         log.info("Finished findStudentsWithNoCourse - students found: " +students.size());
         return students;
     }

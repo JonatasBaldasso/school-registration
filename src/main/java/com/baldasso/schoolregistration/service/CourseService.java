@@ -1,9 +1,7 @@
 package com.baldasso.schoolregistration.service;
 
 import com.baldasso.schoolregistration.dto.CourseDTO;
-import com.baldasso.schoolregistration.dto.StudentDTO;
 import com.baldasso.schoolregistration.entities.Course;
-import com.baldasso.schoolregistration.entities.Student;
 import com.baldasso.schoolregistration.exepctions.CourseNotFound;
 import com.baldasso.schoolregistration.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -11,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 @Slf4j

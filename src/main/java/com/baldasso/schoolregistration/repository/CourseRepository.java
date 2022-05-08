@@ -11,7 +11,7 @@ import java.util.Collection;
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
     @Query("SELECT c FROM Course c LEFT JOIN CourseRegistration cr ON c.id = cr.course WHERE cr.id is null")
-    public Collection<Course> findCourseWithNoStudents();
+    Collection<Course> findCourseWithNoStudents();
 
 
     Collection<Course> findByStudents_Id(Long studentId);

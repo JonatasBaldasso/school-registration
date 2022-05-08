@@ -14,9 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 @Slf4j
@@ -62,8 +60,8 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public List<Student> findAllStudentsWithNoCourse() {
-        return (List<Student>) studentRepository.findByCourseIsNull();
+    public Collection<Student> findAllStudentsWithNoCourse() {
+        return studentRepository.findByCourseIsNull();
     }
 
     private void assertRegisterStudentsData(Student student, Course course) {
