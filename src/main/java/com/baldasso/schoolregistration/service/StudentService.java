@@ -36,13 +36,11 @@ public class StudentService {
     }
 
     public Collection<Student> findStudentsByCourse(Long courseId) {
-        Collection<Student> students = studentRepository.findByCourses_Id(courseId);
-        return  students;
+        return studentRepository.findByCourses_Id(courseId);
     }
 
-    public void createStudent(StudentDTO student) {
-        Student studentCreated = studentRepository.save(student.toStudent());
-        System.out.println(studentCreated.getId());
+    public Student createStudent(StudentDTO student) {
+        return studentRepository.save(student.toStudent());
     }
 
     public void deleteStudent(Long studentId) {

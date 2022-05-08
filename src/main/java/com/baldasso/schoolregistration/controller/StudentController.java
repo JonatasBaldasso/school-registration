@@ -51,10 +51,11 @@ public class StudentController {
     }
 
     @PostMapping
-    public void createUser(@RequestBody StudentDTO studentDTO) {
+    public Student createUser(@RequestBody StudentDTO studentDTO) {
         log.info("Call createUser - student: " + studentDTO.getName());
-        studentService.createStudent(studentDTO);
+        Student student = studentService.createStudent(studentDTO);
         log.info("Finished createUser - student: " + studentDTO.getName());
+        return student;
     }
 
     @PutMapping("/{studentId}")
