@@ -10,6 +10,7 @@ import java.util.Collection;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
+    Collection<Student> findByCourses_Id(Long courseId);
 
     @Query("SELECT s FROM Student s LEFT JOIN CourseRegistration cr ON s.id = cr.student WHERE cr.id is null")
     public Collection<Student> findByCourseIsNull();

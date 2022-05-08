@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -36,9 +37,9 @@ public class StudentService {
         return maybeStudent.get();
     }
 
-    public Set<Student> findStudentsByCourse(Long courseId) {
-        Course course = courseService.findById(courseId);
-        return course.getStudents();
+    public Collection<Student> findStudentsByCourse(Long courseId) {
+        Collection<Student> students = studentRepository.findByCourses_Id(courseId);
+        return  students;
     }
 
     public void createStudent(StudentDTO student) {
