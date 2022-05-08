@@ -1,9 +1,23 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:6603/school-registration
-    username: root
-    password: jsppassword
+    url: jdbc:mysql://db:3306/school-registration
+    username: school-admin
+    password: school
+    name: SchoolRegistrationMysqlDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    dialect: org.hibernate.dialect.MySQL8Dialect
+#    type: com.zaxxer.hikari.HikariDataSource
+#    dialect: org.hibernate.dialect.MySQL8Dialect
+#    hiraki:
+#      pool-name: MysqlPool
+#      connection-test-query: select now();
+#      maximum-pool-size: 5
+#      minimum-idle: 1
+#      connection-timeout: 20000
+#      idle-timeout: 10000
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
     show-sql: true
