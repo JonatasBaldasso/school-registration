@@ -1,14 +1,19 @@
 package com.baldasso.schoolregistration.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "course_registration")
+@Getter
+@Setter
 public class CourseRegistration {
+
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne
@@ -19,5 +24,6 @@ public class CourseRegistration {
     @JoinColumn(name = "course_id")
     Course course;
 
+    @Column(name = "registered_at")
     Timestamp registeredAt;
 }

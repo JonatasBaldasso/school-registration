@@ -1,13 +1,8 @@
 package com.baldasso.schoolregistration.service;
 
 import com.baldasso.schoolregistration.dto.StudentDTO;
-import com.baldasso.schoolregistration.entities.Course;
 import com.baldasso.schoolregistration.entities.Student;
-import com.baldasso.schoolregistration.exepctions.CourseFullError;
-import com.baldasso.schoolregistration.exepctions.StudentAlreadyRegistered;
-import com.baldasso.schoolregistration.exepctions.StudentCoursesFullError;
 import com.baldasso.schoolregistration.exepctions.StudentNotFound;
-import com.baldasso.schoolregistration.model.input.PostStudentRegisterCourseInput;
 import com.baldasso.schoolregistration.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,35 +43,10 @@ public class StudentService {
         studentRepository.delete(student);
     }
 
-    public void registerStudent(Long studentId, PostStudentRegisterCourseInput registerCourse) {
-        Course course = courseService.findById(registerCourse.getId());
-        Student student = findById(studentId);
 
-        assertRegisterStudentsData(student, course);
-
-        student.getCourses().add(course);
-        studentRepository.save(student);
-    }
 
     public Collection<Student> findAllStudentsWithNoCourse() {
         return studentRepository.findByCourseIsNull();
-    }
-
-    private void assertRegisterStudentsData(Student student, Course course) {
-        if (student.getCourses().size() >= 5) {
-            log.error("Error assertRegisterStudentsData studentFull - studentId:" + student.getId());
-            throw new StudentCoursesFullError();
-        }
-
-        if (course.getStudents().size() >= 50) {
-            log.error("Error assertRegisterStudentsData CourseFull - courseId:" + course.getId());
-            throw new CourseFullError();
-        }
-
-        if(student.getCourses().contains(course)) {
-            log.error("Error assertRegisterStudentsData StudentAlreadyRegistered - studentId:" + student.getId());
-            throw new StudentAlreadyRegistered();
-        }
     }
 
     public void updateStudent(Long studentId, StudentDTO studentDTO) {

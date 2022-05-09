@@ -33,7 +33,7 @@ public class CourseController {
         return courses;
     }
 
-    @GetMapping("/no-student")
+    @GetMapping("/no-register")
     public Collection<Course> findCourseWithNoStudent () {
         log.info("Call findCourseWithNoStudent");
         Collection<Course> courses = courseService.findAllCoursesWithNoStudent();

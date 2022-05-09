@@ -2,7 +2,7 @@ package com.baldasso.schoolregistration.controller;
 
 import com.baldasso.schoolregistration.dto.StudentDTO;
 import com.baldasso.schoolregistration.entities.Student;
-import com.baldasso.schoolregistration.model.input.PostStudentRegisterCourseInput;
+import com.baldasso.schoolregistration.model.input.PostRegisterStudentOnCourseInput;
 import com.baldasso.schoolregistration.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class StudentController {
         return students;
     }
 
-    @GetMapping("/no-course")
+    @GetMapping("/no-register")
     public Collection<Student> findStudentsWithNoCourse () {
         log.info("Call findStudentsWithNoCourse");
         Collection<Student> students = studentService.findAllStudentsWithNoCourse();
@@ -42,13 +42,13 @@ public class StudentController {
         return students;
     }
 
-    @PostMapping("/{studentId}/course")
-    public void registerStudent(@PathVariable("studentId") Long studentId,
-                                @RequestBody PostStudentRegisterCourseInput course) {
-        log.info("Call registerStudent - student: " + studentId + " course: " + course.getId());
-        studentService.registerStudent(studentId, course);
-        log.info("Finished registerStudent - student: " + studentId + " course: " + course.getId());
-    }
+//    @PostMapping("/{studentId}/course")
+//    public void registerStudent(@PathVariable("studentId") Long studentId,
+//                                @RequestBody PostRegisterStudentOnCourseInput course) {
+//        log.info("Call registerStudent - student: " + studentId + " course: " + course.getId());
+//        studentService.registerStudent(studentId, course);
+//        log.info("Finished registerStudent - student: " + studentId + " course: " + course.getId());
+//    }
 
     @PostMapping
     public Student createUser(@RequestBody StudentDTO studentDTO) {

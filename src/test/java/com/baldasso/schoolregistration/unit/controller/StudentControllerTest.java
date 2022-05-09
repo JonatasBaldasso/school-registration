@@ -72,7 +72,7 @@ public class StudentControllerTest {
     @Test
     public void givenValidCollection_WhenGetStudentWithNoCourse_ThenReturnValidStudentList() throws Exception {
         given(studentService.findAllStudentsWithNoCourse()).willReturn(validCollectionOfStudents());
-        mvc.perform(get("/student/no-course")
+        mvc.perform(get("/student/no-register")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()", is(3)))
