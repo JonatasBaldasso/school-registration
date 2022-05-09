@@ -28,7 +28,7 @@ public class CourseController {
     @GetMapping("/student/{studentId}")
     public Collection<Course> findCourseByStudent (@PathVariable("studentId") Long studentId) {
         log.info("Call findCourseByStudent - studentId: " + studentId);
-        Collection<Course> courses = courseService.findStudentsByCourse(studentId);
+        Collection<Course> courses = courseService.findCourseByStudent(studentId);
         log.info("Finished findCourseByStudent - studentId: " + studentId);
         return courses;
     }
@@ -36,7 +36,7 @@ public class CourseController {
     @GetMapping("/no-student")
     public Collection<Course> findCourseWithNoStudent () {
         log.info("Call findCourseWithNoStudent");
-        Collection<Course> courses = courseService.findAllStudentsWithNoCourse();
+        Collection<Course> courses = courseService.findAllCoursesWithNoStudent();
         log.info("Finished findCourseWithNoStudent - course found: " + courses.size());
         return courses;
     }

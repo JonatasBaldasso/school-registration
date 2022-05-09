@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ce9e5c-8a53-41c0-9a78-2eb71a72e0ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/volume_mysql/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/docker/volume_mysql/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/volume_mysql/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/docker/volume_mysql/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baldasso/schoolregistration/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baldasso/schoolregistration/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baldasso/schoolregistration/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baldasso/schoolregistration/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/StudentDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/data/StudentDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/controller/StudentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/controller/StudentControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/service/StudentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/service/StudentServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,20 +95,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Application.SchoolRegistrationApplication">
-    <configuration name="SchoolRegistrationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.baldasso.schoolregistration.SchoolRegistrationApplication" />
-      <module name="school-registration.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.baldasso.schoolregistration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.CourseControllerTest.givenValidCollection_WhenGetStudentWithNoCourse_ThenReturnValidStudentList">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />
       <setting name="bbPath" value="" />
@@ -139,7 +132,7 @@
       <setting name="focusEditor" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="StudentControllerTest.givenValidStudent_WhenGetStudentById_ThenReturnCorrectJson" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CourseControllerTest.givenValidCollection_WhenGetCourseByStudentId_ThenReturnCorrectJson" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -152,7 +145,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.baldasso.schoolregistration.unit.controller.StudentControllerTest.givenValidStudent_WhenGetStudentById_ThenReturnCorrectJson&quot;" />
+            <option value="&quot;com.baldasso.schoolregistration.unit.controller.CourseControllerTest.givenValidCollection_WhenGetCourseByStudentId_ThenReturnCorrectJson&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -162,7 +155,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="StudentServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CourseControllerTest.givenValidCollection_WhenGetStudentByCourseId_ThenReturnCorrectJson" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +168,76 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.baldasso.schoolregistration.unit.service.StudentServiceTest&quot;" />
+            <option value="&quot;com.baldasso.schoolregistration.unit.controller.CourseControllerTest.givenValidCollection_WhenGetStudentByCourseId_ThenReturnCorrectJson&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CourseControllerTest.givenValidCollection_WhenGetStudentWithNoCourse_ThenReturnValidStudentList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.baldasso.schoolregistration.unit.controller.CourseControllerTest.givenValidCollection_WhenGetStudentWithNoCourse_ThenReturnValidStudentList&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CourseControllerTest.givenValidStudent_WhenGetStudentById_ThenReturnCorrectJson" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.baldasso.schoolregistration.unit.controller.CourseControllerTest.givenValidStudent_WhenGetStudentById_ThenReturnCorrectJson&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="StudentControllerTest.givenValidStudent_WhenPostCreateUser_ThenReturnValidStudent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.baldasso.schoolregistration.unit.controller.StudentControllerTest.givenValidStudent_WhenPostCreateUser_ThenReturnValidStudent&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -194,30 +256,13 @@
       <option name="AUTO_RESTART" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="containerName" value="" />
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SchoolRegistrationApplication" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Gradle.StudentControllerTest.givenValidStudent_WhenGetStudentById_ThenReturnCorrectJson" />
-        <item itemvalue="Gradle.StudentServiceTest" />
+        <item itemvalue="Gradle.CourseControllerTest.givenValidCollection_WhenGetStudentWithNoCourse_ThenReturnValidStudentList" />
+        <item itemvalue="Gradle.CourseControllerTest.givenValidCollection_WhenGetCourseByStudentId_ThenReturnCorrectJson" />
+        <item itemvalue="Gradle.CourseControllerTest.givenValidCollection_WhenGetStudentByCourseId_ThenReturnCorrectJson" />
+        <item itemvalue="Gradle.CourseControllerTest.givenValidStudent_WhenGetStudentById_ThenReturnCorrectJson" />
+        <item itemvalue="Gradle.StudentControllerTest.givenValidStudent_WhenPostCreateUser_ThenReturnValidStudent" />
       </list>
     </recent_temporary>
   </component>
@@ -255,6 +300,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/baldasso/schoolregistration/service/StudentService.java</url>
           <line>34</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/baldasso/schoolregistration/unit/controller/StudentControllerTest.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

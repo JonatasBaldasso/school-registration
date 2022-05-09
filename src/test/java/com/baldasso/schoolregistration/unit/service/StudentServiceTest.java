@@ -5,7 +5,7 @@ import com.baldasso.schoolregistration.entities.Student;
 import com.baldasso.schoolregistration.exepctions.StudentNotFound;
 import com.baldasso.schoolregistration.repository.StudentRepository;
 import com.baldasso.schoolregistration.service.StudentService;
-import com.baldasso.schoolregistration.unit.StudentDataTest;
+import com.baldasso.schoolregistration.unit.data.StudentDataTest;
 import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
@@ -36,7 +36,6 @@ public class StudentServiceTest {
 
     @Test
     public void givenValidStudent_WhenFindById_ThenReturnValidStudent() {
-
         Mockito.when(studentRepository.findById(any())).thenReturn(StudentDataTest.validOptionalStudent());
         Student student = studentService.findById(1L);
         assertThat(student.getId()).isEqualTo(1L);

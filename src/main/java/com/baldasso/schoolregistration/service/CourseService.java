@@ -47,11 +47,11 @@ public class CourseService {
         }
     }
 
-    public Collection<Course> findAllStudentsWithNoCourse() {
+    public Collection<Course> findAllCoursesWithNoStudent() {
         return courseRepository.findCourseWithNoStudents();
     }
 
-    public Collection<Course> findStudentsByCourse(Long studentId) {
+    public Collection<Course> findCourseByStudent(Long studentId) {
         return courseRepository.findByStudents_Id(studentId);
     }
 }
