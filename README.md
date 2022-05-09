@@ -1,9 +1,9 @@
 # School Registration
 ## Starting the project:
 Run the following commands on command-line
-- ./gradlew bootJar
-- docker-compose up
-- ./gradlew bootRun
+- Run "./gradlew bootJar"
+- Run "docker-compose up"
+- On another tab run "./gradlew bootRun"
 
 The application will start and connect to a database with some data
 
