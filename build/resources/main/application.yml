@@ -1,12 +1,11 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/school-registration?autoReconnect=true&useSSL=false
-    username: school-admin
-    password: school
+    username: ${ENV_MYSQL_USERNAME:school-admin}
+    password: ${ENV_MYSQL_PASSWORD:school}
     name: SchoolRegistrationMysqlDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    dialect: org.hibernate.dialect.MySQL5Dialect
     hiraki:
       pool-name: MysqlPool
       connection-test-query: select now();

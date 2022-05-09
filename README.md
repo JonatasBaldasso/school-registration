@@ -1,1 +1,1 @@
-# school-registration
+# School Registration

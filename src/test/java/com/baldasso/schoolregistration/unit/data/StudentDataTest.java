@@ -1,7 +1,6 @@
 package com.baldasso.schoolregistration.unit.data;
 
 
-import com.baldasso.schoolregistration.entities.Course;
 import com.baldasso.schoolregistration.entities.Student;
 
 import java.util.Collection;
@@ -9,9 +8,8 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.baldasso.schoolregistration.unit.data.CourseDataTest.validJavaCourse;
-import static org.springframework.boot.context.properties.bind.Bindable.listOf;
-import static org.springframework.boot.context.properties.bind.Bindable.setOf;
+import static com.baldasso.schoolregistration.unit.data.CourseDataTest.setOf5Courses;
+import static com.baldasso.schoolregistration.unit.data.CourseDataTest.validSetOfCourses;
 
 public class StudentDataTest {
 
@@ -22,10 +20,11 @@ public class StudentDataTest {
         return student;
     }
 
-    public static Student validStudent2() {
+    public static Student studentWithJavaCourse() {
         Student student = new Student();
         student.setId(2L);
         student.setName("John");
+        student.setCourses(validSetOfCourses());
         return student;
     }
 
@@ -39,8 +38,27 @@ public class StudentDataTest {
     public static Set<Student> validSetOfStudent() {
         Set<Student> studentSet = new HashSet<>();
         studentSet.add(validStudent());
-        studentSet.add(validStudent2());
+        studentSet.add(studentWithJavaCourse());
         studentSet.add(validStudent3());
+        return studentSet;
+    }
+
+    public static Student studentFull() {
+        Student student = new Student();
+        student.setId(4L);
+        student.setName("Amy");
+        student.setCourses(setOf5Courses());
+        return student;
+    }
+
+    public static Set<Student> setOf50Students() {
+        Set<Student> studentSet = new HashSet<>();
+        for(int i = 1; i <= 50 ; i++) {
+            Student student = new Student();
+            student.setId(Integer.toUnsignedLong(i));
+            student.setName("Student Test");
+            studentSet.add(student);
+        }
         return studentSet;
     }
 

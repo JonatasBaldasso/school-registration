@@ -5,11 +5,11 @@ import com.baldasso.schoolregistration.entities.CourseRegistration;
 import com.baldasso.schoolregistration.entities.Student;
 import com.baldasso.schoolregistration.exepctions.CourseFullError;
 import com.baldasso.schoolregistration.exepctions.StudentAlreadyRegistered;
-import com.baldasso.schoolregistration.exepctions.StudentCoursesFullError;
+import com.baldasso.schoolregistration.exepctions.StudentFullError;
 import com.baldasso.schoolregistration.model.input.PostRegisterStudentOnCourseInput;
 import com.baldasso.schoolregistration.repository.CourseRegistrationRepository;
-import com.baldasso.schoolregistration.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class RegisterService {
     @Autowired
     private CourseRegistrationRepository courseRegistrationRepository;
 
-    public void registerStudent(PostRegisterStudentOnCourseInput registerCourse) {
+    public void registerStudent(@NotNull PostRegisterStudentOnCourseInput registerCourse) {
         Course course = courseService.findById(registerCourse.getCourseId());
         Student student = studentService.findById(registerCourse.getStudentId());
 
@@ -42,17 +42,17 @@ public class RegisterService {
     }
 
     private void assertRegisterStudentsData(Student student, Course course) {
-        if (student.getCourses().size() >= 5) {
+        if (student.getCourses()!= null && student.getCourses().size() >= 5) {
             log.error("Error assertRegisterStudentsData studentFull - studentId:" + student.getId());
-            throw new StudentCoursesFullError();
+            throw new StudentFullError();
         }
 
-        if (course.getStudents().size() >= 50) {
+        if (course.getStudents() != null && course.getStudents().size() >= 50) {
             log.error("Error assertRegisterStudentsData CourseFull - courseId:" + course.getId());
             throw new CourseFullError();
         }
 
-        if(student.getCourses().contains(course)) {
+        if(student.getCourses() != null && student.getCourses().contains(course)) {
             log.error("Error assertRegisterStudentsData StudentAlreadyRegistered - studentId:" + student.getId());
             throw new StudentAlreadyRegistered();
         }
